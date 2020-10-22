@@ -21,6 +21,12 @@
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+  <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+
 </head>
 
 <body id="page-top">
@@ -43,15 +49,15 @@
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="far fa-calendar-alt"></i>
           <span>Class Timetable</span>
         </a>
-        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Schedule</h6>
-            <a class="collapse-item active" href="schedule_search.html">Search</a>
+            <a class="collapse-item" href="schedule_search.html">Search</a>
             <a class="collapse-item" href="schedule_register.html">Register</a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Lesson:</h6>
@@ -91,12 +97,12 @@
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="far fa-file-alt"></i>
           <span>Evaluation</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="evaluation_search.html">Search</a>
             <a class="collapse-item" href="evaluation_input.html">Input</a>
@@ -163,372 +169,59 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Schedule</h1>
+          <h1 class="h3 mb-4 text-gray-800">Evaluation Edit</h1>
 
-          <hr class="sidebar-divider">
-
-          <!--Search form-->
+          <!--Input form-->
           <form>
-            <div class="form-row">
-              <div class="form-group col-md-2">
-                <label for="inputAddress">Schedule ID</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="schedule id">
+            <div class="form-group row">
+              <label for="inputDate" class="col-sm-2 col-form-label">Day</label>
+              <div class="col">
+                <input type="date" class="form-control" value="2020-10-10">
               </div>
-              <div class="form-group col-md-2">
-                <label for="inputState">Type</label>
-                <select id="inputState" class="form-control">
+            </div>
+            <div class="form-group row">
+              <label for="inputState" class="col-sm-2 col-form-label">Teacher</label>
+              <div class="col">
+                <select class="form-control" id="teacherSelect">
                   <option>----</option>
-                  <option selected>On-site</option>
-                  <option>Online</option>
-                </select>
-              </div>
-              <div class="form-group col-md-2">
-                <label for="inputState">Class</label>
-                <select id="inputState" class="form-control">
-                  <option>----</option>
-                  <option selected>ES110</option>
-                  <option>ES210</option>
-                </select>
-              </div>
-              <div class="form-group col-md-2">
-                <label for="inputState">Place</label>
-                <select id="inputState" class="form-control">
-                  <option>----</option>
-                  <option selected>Shibuya</option>
-                  <option>Jiyugaoka</option>
-                  <option>Kichijoji</option>
-                </select>
-              </div>
-              <div class="form-group col-md-2">
-                <label for="inputState">Building</label>
-                <select id="inputState" class="form-control">
-                  <option>----</option>
-                  <option selected>J Plaza</option>
-                  <option>O N</option>
-                </select>
-              </div>
-              <div class="form-group col-md-2">
-                <label for="inputState">Room</label>
-                <select id="inputState" class="form-control">
-                  <option>----</option>
-                  <option selected>3A</option>
-                  <option> 3B </option>
-                  <option> 3C </option>
-                  <option> 3D </option>
-                  <option> 4E </option>
-                  <option> 4F </option>
-                  <option> 4G </option>
-                  <option> 4H </option>
-                  <option> 5I </option>
-                  <option> 5J </option>
-                  <option> 5K </option>
-                  <option> 5L </option>
-                  <option> 6M </option>
-                  <option> 6N </option>
-                  <option> 6O </option>
-                  <option> 6P </option>
+                  <option selected>松井 大介 matsui daisuke</option>
+                  <option>塚本 武 tsukamoto takeshi</option>
                 </select>
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-3">
-                <label for="inputState">Teacher 1</label>
-                <select id="inputState" class="form-control">
+            <div class="form-group row">
+              <label for="inputState" class="col-sm-2 col-form-label">Observer</label>
+              <div class="col">
+                <select class="form-control" id="observerSelect">
                   <option>----</option>
-                  <option selected>Yoshida</option>
-                  <option>Matsui</option>
-                </select>
-              </div>
-              <div class="form-group col-md-3">
-                <label for="inputState">Teacher 2</label>
-                <select id="inputState" class="form-control">
-                  <option>----</option>
-                  <option selected>Tsukamoto</option>
-                  <option>Kadotami</option>
-                </select>
-              </div>
-              <div class="form-group col-md-3">
-                <label for="inputState">TA</label>
-                <select id="inputState" class="form-control">
-                  <option>----</option>
-                  <option selected>Phong</option>
-                  <option>Huong</option>
+                  <option selected>フォン phong</option>
+                  <option>宮本 学 miyamoto manabu</option>
                 </select>
               </div>
             </div>
-            <div class="form-group form-row">
-              <div class="md-form md-outline input-with-post-icon datepicker form-group col-md-3">
-                <label for="inputState">From</label>
-                <input placeholder="Select date" type="date" id="example" class="form-control">
-              </div>
-              <div class="md-form md-outline input-with-post-icon datepicker form-group col-md-3">
-                <label for="inputState">To</label>
-                <input placeholder="Select date" type="date" id="example" class="form-control">
-              </div>
-              <div class="form-group col-md-3">
-                <label for="inputState">Day of Week</label>
-                <select id="inputState" class="form-control">
-                  <option>----</option>
-                  <option selected>Monday</option>
-                  <option>Tuesday</option>
-                  <option>Wednesday</option>
-                  <option>Thursday</option>
-                  <option>Friday</option>
-                  <option>Saturday</option>
-                  <option>Sunday</option>
-                </select>
+            <div class="form-group row">
+              <label for="textarea" class="col-sm-2 col-form-label">Comment</label>
+              <div class="col">
+                <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10">Comment
+Comment
+                </textarea>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Search</button>
-          </form>
+            <div class="form-group row">
+              <label for="textarea" class="col-sm-2 col-form-label">Sheet</label>
+              <div class="col">
+                <span class="file-name" id="id-file-name">test.docx</span>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+            </div>
 
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td>$320,800</td>
-                    </tr>
-                    <tr>
-                      <td>Gloria Little</td>
-                      <td>Systems Administrator</td>
-                      <td>New York</td>
-                      <td>59</td>
-                      <td>2009/04/10</td>
-                      <td>$237,500</td>
-                    </tr>
-                    <tr>
-                      <td>Bradley Greer</td>
-                      <td>Software Engineer</td>
-                      <td>London</td>
-                      <td>41</td>
-                      <td>2012/10/13</td>
-                      <td>$132,000</td>
-                    </tr>
-                    <tr>
-                      <td>Dai Rios</td>
-                      <td>Personnel Lead</td>
-                      <td>Edinburgh</td>
-                      <td>35</td>
-                      <td>2012/09/26</td>
-                      <td>$217,500</td>
-                    </tr>
-                    <tr>
-                      <td>Jenette Caldwell</td>
-                      <td>Development Lead</td>
-                      <td>New York</td>
-                      <td>30</td>
-                      <td>2011/09/03</td>
-                      <td>$345,000</td>
-                    </tr>
-                    <tr>
-                      <td>Yuri Berry</td>
-                      <td>Chief Marketing Officer (CMO)</td>
-                      <td>New York</td>
-                      <td>40</td>
-                      <td>2009/06/25</td>
-                      <td>$675,000</td>
-                    </tr>
-                    <tr>
-                      <td>Caesar Vance</td>
-                      <td>Pre-Sales Support</td>
-                      <td>New York</td>
-                      <td>21</td>
-                      <td>2011/12/12</td>
-                      <td>$106,450</td>
-                    </tr>
-                    <tr>
-                      <td>Doris Wilder</td>
-                      <td>Sales Assistant</td>
-                      <td>Sidney</td>
-                      <td>23</td>
-                      <td>2010/09/20</td>
-                      <td>$85,600</td>
-                    </tr>
-                    <tr>
-                      <td>Angelica Ramos</td>
-                      <td>Chief Executive Officer (CEO)</td>
-                      <td>London</td>
-                      <td>47</td>
-                      <td>2009/10/09</td>
-                      <td>$1,200,000</td>
-                    </tr>
-                    <tr>
-                      <td>Gavin Joyce</td>
-                      <td>Developer</td>
-                      <td>Edinburgh</td>
-                      <td>42</td>
-                      <td>2010/12/22</td>
-                      <td>$92,575</td>
-                    </tr>
-                    <tr>
-                      <td>Jennifer Chang</td>
-                      <td>Regional Director</td>
-                      <td>Singapore</td>
-                      <td>28</td>
-                      <td>2010/11/14</td>
-                      <td>$357,650</td>
-                    </tr>
-                    <tr>
-                      <td>Brenden Wagner</td>
-                      <td>Software Engineer</td>
-                      <td>San Francisco</td>
-                      <td>28</td>
-                      <td>2011/06/07</td>
-                      <td>$206,850</td>
-                    </tr>
-                    <tr>
-                      <td>Fiona Green</td>
-                      <td>Chief Operating Officer (COO)</td>
-                      <td>San Francisco</td>
-                      <td>48</td>
-                      <td>2010/03/11</td>
-                      <td>$850,000</td>
-                    </tr>
-                    <tr>
-                      <td>Shou Itou</td>
-                      <td>Regional Marketing</td>
-                      <td>Tokyo</td>
-                      <td>20</td>
-                      <td>2011/08/14</td>
-                      <td>$163,000</td>
-                    </tr>
-                    <tr>
-                      <td>Michelle House</td>
-                      <td>Integration Specialist</td>
-                      <td>Sidney</td>
-                      <td>37</td>
-                      <td>2011/06/02</td>
-                      <td>$95,400</td>
-                    </tr>
-                    <tr>
-                      <td>Suki Burks</td>
-                      <td>Developer</td>
-                      <td>London</td>
-                      <td>53</td>
-                      <td>2009/10/22</td>
-                      <td>$114,500</td>
-                    </tr>
-                    <tr>
-                      <td>Prescott Bartlett</td>
-                      <td>Technical Author</td>
-                      <td>London</td>
-                      <td>27</td>
-                      <td>2011/05/07</td>
-                      <td>$145,000</td>
-                    </tr>
-                    <tr>
-                      <td>Gavin Cortez</td>
-                      <td>Team Leader</td>
-                      <td>San Francisco</td>
-                      <td>22</td>
-                      <td>2008/10/26</td>
-                      <td>$235,500</td>
-                    </tr>
-                    <tr>
-                      <td>Martena Mccray</td>
-                      <td>Post-Sales support</td>
-                      <td>Edinburgh</td>
-                      <td>46</td>
-                      <td>2011/03/09</td>
-                      <td>$324,050</td>
-                    </tr>
-                    <tr>
-                      <td>Unity Butler</td>
-                      <td>Marketing Designer</td>
-                      <td>San Francisco</td>
-                      <td>47</td>
-                      <td>2009/12/09</td>
-                      <td>$85,675</td>
-                    </tr>
-                    <tr>
-                      <td>Cara Stevens</td>
-                      <td>Sales Assistant</td>
-                      <td>New York</td>
-                      <td>46</td>
-                      <td>2011/12/06</td>
-                      <td>$145,600</td>
-                    </tr>
-                    <tr>
-                      <td>Hermione Butler</td>
-                      <td>Regional Director</td>
-                      <td>London</td>
-                      <td>47</td>
-                      <td>2011/03/21</td>
-                      <td>$356,250</td>
-                    </tr>
-                    <tr>
-                      <td>Lael Greer</td>
-                      <td>Systems Administrator</td>
-                      <td>London</td>
-                      <td>21</td>
-                      <td>2009/02/27</td>
-                      <td>$103,500</td>
-                    </tr>
-                    <tr>
-                      <td>Jonas Alexander</td>
-                      <td>Developer</td>
-                      <td>San Francisco</td>
-                      <td>30</td>
-                      <td>2010/07/14</td>
-                      <td>$86,500</td>
-                    </tr>
-                    <tr>
-                      <td>Shad Decker</td>
-                      <td>Regional Director</td>
-                      <td>Edinburgh</td>
-                      <td>51</td>
-                      <td>2008/11/13</td>
-                      <td>$183,000</td>
-                    </tr>
-                    <tr>
-                      <td>Michael Bruce</td>
-                      <td>Javascript Developer</td>
-                      <td>Singapore</td>
-                      <td>29</td>
-                      <td>2011/06/27</td>
-                      <td>$183,000</td>
-                    </tr>
-                    <tr>
-                      <td>Donna Snider</td>
-                      <td>Customer Support</td>
-                      <td>New York</td>
-                      <td>27</td>
-                      <td>2011/01/25</td>
-                      <td>$112,000</td>
-                    </tr>
-                  </tbody>
-                </table>
+            <!-- Button -->
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Update</button>
               </div>
             </div>
-          </div>
+          </form>
 
         </div>
         <!-- /.container-fluid -->
@@ -593,6 +286,12 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  <script>
+    $('#teacherSelect').select2();
+    $('#observerSelect').select2();
+  </script>
 </body>
 
 </html>
